@@ -1,0 +1,811 @@
+
+/* =========================
+   RESET
+========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    min-height: 100vh;
+    overflow-x: hidden;
+
+    font-family: "Mukta", sans-serif;
+
+    color: #ffffff;
+
+    background: #0a0c10;
+}
+
+
+/* =========================
+   VÍDEO DE FUNDO
+========================= */
+
+.container-video {
+    position: fixed;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100vh;
+
+    z-index: -10;
+
+    overflow: hidden;
+}
+
+.container-video video {
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+}
+
+
+/* =========================
+   MÁSCARA DO VÍDEO
+========================= */
+
+.mascara-video {
+    position: absolute;
+
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    background: linear-gradient(
+        90deg,
+        rgba(10, 12, 16, 0.98) 0%,
+        rgba(10, 12, 16, 0.85) 20%,
+        rgba(10, 12, 16, 0.45) 50%,
+        rgba(10, 12, 16, 0.85) 80%,
+        rgba(10, 12, 16, 0.98) 100%
+    );
+
+    z-index: 1;
+
+    pointer-events: none;
+}
+
+
+/* =========================
+   CABEÇALHO
+========================= */
+
+.cabecalho {
+    width: 100%;
+
+    padding: 25px 8%;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
+
+    position: relative;
+
+    z-index: 10;
+}
+
+.logo img {
+    width: 150px;
+
+    display: block;
+}
+
+.cabecalho nav ul {
+    display: flex;
+
+    list-style: none;
+
+    gap: 35px;
+}
+
+.cabecalho nav a {
+    color: #ffffff;
+
+    text-decoration: none;
+
+    font-size: 18px;
+    font-weight: 600;
+
+    transition: 0.3s;
+}
+
+.cabecalho nav a:hover {
+    color: #e52521;
+}
+
+
+/* =========================
+   HERO
+========================= */
+
+.container-1 {
+    min-height: 90vh;
+
+    padding: 80px 8%;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 50px;
+}
+
+.caixa-info-texto {
+    width: 50%;
+
+    position: relative;
+
+    z-index: 2;
+}
+
+.logo-mario {
+    width: 220px;
+
+    margin-bottom: 25px;
+}
+
+.caixa-info-texto h1 {
+    font-size: 52px;
+
+    line-height: 1.05;
+
+    font-weight: 800;
+
+    margin-bottom: 25px;
+}
+
+.caixa-info-texto h1 span {
+    display: block;
+
+    color: #e52521;
+}
+
+.caixa-info-texto p {
+    max-width: 600px;
+
+    font-size: 20px;
+
+    line-height: 1.5;
+
+    color: #dddddd;
+
+    margin-bottom: 12px;
+}
+
+
+/* =========================
+   BOTÃO PRINCIPAL
+========================= */
+
+.botao-principal {
+    display: inline-block;
+
+    margin-top: 25px;
+
+    padding: 15px 28px;
+
+    background: #e52521;
+
+    color: #ffffff;
+
+    text-decoration: none;
+
+    font-size: 16px;
+    font-weight: 800;
+
+    border-radius: 5px;
+
+    transition: 0.3s;
+
+    box-shadow: 0 8px 25px rgba(229, 37, 33, 0.3);
+}
+
+.botao-principal:hover {
+    transform: translateY(-3px);
+
+    background: #ff302b;
+
+    box-shadow: 0 12px 35px rgba(229, 37, 33, 0.5);
+}
+
+
+/* =========================
+   MARIO / LUIGI
+========================= */
+
+.container-logo-luigi-mario {
+    width: 45%;
+
+    display: flex;
+
+    justify-content: center;
+
+    position: relative;
+
+    z-index: 2;
+}
+
+.container-logo-luigi-mario img {
+    width: 100%;
+
+    max-width: 550px;
+
+    display: block;
+
+    filter: drop-shadow(
+        0 20px 30px rgba(0, 0, 0, 0.6)
+    );
+}
+
+
+/* =========================
+   SERVIÇOS
+========================= */
+
+.container-servicos {
+    min-height: 100vh;
+
+    padding: 100px 8%;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+
+    position: relative;
+
+    z-index: 2;
+
+    background: rgba(10, 12, 16, 0.55);
+}
+
+.servicos {
+    text-align: center;
+
+    margin-bottom: 55px;
+}
+
+.servicos p {
+    color: #e52521;
+
+    font-size: 18px;
+
+    font-weight: 700;
+
+    text-transform: uppercase;
+
+    letter-spacing: 2px;
+}
+
+.servicos h2 {
+    font-size: 45px;
+
+    font-weight: 800;
+
+    margin: 8px 0;
+}
+
+.servicos span {
+    color: #cccccc;
+
+    font-size: 18px;
+}
+
+
+/* =========================
+   CARDS DE SERVIÇOS
+========================= */
+
+.lista-servicos {
+    width: 100%;
+
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 25px;
+}
+
+.card-servico {
+    padding: 30px;
+
+    background: rgba(15, 17, 22, 0.82);
+
+    border: 1px solid rgba(255, 255, 255, 0.1);
+
+    border-radius: 12px;
+
+    backdrop-filter: blur(8px);
+
+    transition: 0.3s;
+}
+
+.card-servico:hover {
+    transform: translateY(-8px);
+
+    border-color: #e52521;
+
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
+}
+
+.icone-servico {
+    width: 55px;
+    height: 55px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    margin-bottom: 20px;
+
+    font-size: 25px;
+
+    background: rgba(229, 37, 33, 0.15);
+
+    border: 1px solid rgba(229, 37, 33, 0.4);
+
+    border-radius: 50%;
+}
+
+.card-servico h3 {
+    font-size: 24px;
+
+    margin-bottom: 10px;
+}
+
+.card-servico p {
+    color: #bbbbbb;
+
+    font-size: 17px;
+
+    line-height: 1.5;
+
+    margin-bottom: 20px;
+}
+
+.card-servico a {
+    color: #e52521;
+
+    text-decoration: none;
+
+    font-weight: 700;
+
+    transition: 0.3s;
+}
+
+.card-servico a:hover {
+    color: #ffffff;
+}
+
+
+/* =========================
+   CONTATO
+========================= */
+
+.container-contato {
+    min-height: 60vh;
+
+    padding: 100px 8%;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+
+    position: relative;
+
+    z-index: 2;
+
+    background: rgba(10, 12, 16, 0.8);
+}
+
+.container-contato header p {
+    color: #e52521;
+
+    font-size: 18px;
+
+    font-weight: 700;
+
+    text-transform: uppercase;
+
+    letter-spacing: 2px;
+}
+
+.container-contato h2 {
+    font-size: 48px;
+
+    margin: 10px 0;
+}
+
+.container-contato span {
+    color: #cccccc;
+
+    font-size: 19px;
+}
+
+
+/* =========================
+   RODAPÉ
+========================= */
+
+.rodape {
+    position: relative;
+
+    z-index: 2;
+
+    padding: 70px 8% 20px;
+
+    background: rgba(5, 7, 10, 0.97);
+
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+
+/* =========================
+   CONTEÚDO DO RODAPÉ
+========================= */
+
+.rodape-conteudo {
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 50px;
+
+    padding-bottom: 50px;
+}
+
+
+/* =========================
+   MARCA
+========================= */
+
+.rodape-marca {
+    max-width: 350px;
+}
+
+.rodape-marca img {
+    width: 180px;
+
+    margin-bottom: 15px;
+}
+
+.rodape-marca p {
+    color: #aaaaaa;
+
+    font-size: 17px;
+
+    line-height: 1.5;
+}
+
+
+/* =========================
+   REDES SOCIAIS
+========================= */
+
+.rodape-redes {
+    text-align: center;
+}
+
+.rodape-redes h3 {
+    margin-bottom: 20px;
+
+    font-size: 20px;
+}
+
+.redes-sociais {
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    gap: 15px;
+}
+
+.redes-sociais a {
+    width: 52px;
+    height: 52px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    color: #ffffff;
+
+    text-decoration: none;
+
+    background: rgba(255, 255, 255, 0.08);
+
+    border: 1px solid rgba(255, 255, 255, 0.15);
+
+    transition: all 0.3s ease;
+}
+
+.redes-sociais i {
+    font-size: 23px;
+}
+
+
+/* INSTAGRAM */
+
+.redes-sociais .instagram:hover {
+    background: #E1306C;
+
+    border-color: #E1306C;
+
+    transform: translateY(-5px);
+
+    box-shadow:
+        0 10px 25px rgba(225, 48, 108, 0.4);
+}
+
+
+/* FACEBOOK */
+
+.redes-sociais .facebook:hover {
+    background: #1877F2;
+
+    border-color: #1877F2;
+
+    transform: translateY(-5px);
+
+    box-shadow:
+        0 10px 25px rgba(24, 119, 242, 0.4);
+}
+
+
+/* WHATSAPP */
+
+.redes-sociais .whatsapp-social:hover {
+    background: #25D366;
+
+    border-color: #25D366;
+
+    transform: translateY(-5px);
+
+    box-shadow:
+        0 10px 25px rgba(37, 211, 102, 0.4);
+}
+
+
+/* =========================
+   COPYRIGHT
+========================= */
+
+.rodape-final {
+    padding-top: 20px;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    gap: 20px;
+
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+
+    color: #777777;
+
+    font-size: 14px;
+}
+
+
+/* =========================
+   WHATSAPP FLUTUANTE
+========================= */
+
+.whatsapp {
+    position: fixed;
+
+    right: 25px;
+    bottom: 25px;
+
+    z-index: 100;
+}
+
+.whatsapp img {
+    width: 65px;
+
+    display: block;
+
+    transition: 0.3s;
+
+    filter: drop-shadow(
+        0 5px 15px rgba(0, 0, 0, 0.5)
+    );
+}
+
+.whatsapp img:hover {
+    transform: scale(1.1);
+}
+
+
+/* =========================
+   RESPONSIVIDADE
+========================= */
+
+@media (max-width: 1100px) {
+
+    .container-1 {
+        padding: 70px 6%;
+    }
+
+    .lista-servicos {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .caixa-info-texto h1 {
+        font-size: 44px;
+    }
+}
+
+
+@media (max-width: 700px) {
+
+    .cabecalho {
+        padding: 20px;
+
+        flex-direction: column;
+
+        gap: 20px;
+    }
+
+    .cabecalho nav ul {
+        gap: 15px;
+
+        flex-wrap: wrap;
+
+        justify-content: center;
+    }
+
+    .cabecalho nav a {
+        font-size: 15px;
+    }
+
+
+    /* HERO */
+
+    .container-1 {
+        min-height: auto;
+
+        padding: 60px 25px;
+
+        flex-direction: column;
+
+        text-align: center;
+    }
+
+    .caixa-info-texto {
+        width: 100%;
+    }
+
+    .caixa-info-texto h1 {
+        font-size: 38px;
+    }
+
+    .caixa-info-texto p {
+        font-size: 18px;
+    }
+
+    .logo-mario {
+        width: 180px;
+    }
+
+    .container-logo-luigi-mario {
+        width: 100%;
+    }
+
+
+    /* SERVIÇOS */
+
+    .container-servicos {
+        padding: 80px 25px;
+    }
+
+    .servicos h2 {
+        font-size: 36px;
+    }
+
+    .lista-servicos {
+        grid-template-columns: 1fr;
+    }
+
+
+    /* CONTATO */
+
+    .container-contato {
+        padding: 80px 25px;
+    }
+
+    .container-contato h2 {
+        font-size: 38px;
+    }
+
+
+    /* RODAPÉ */
+
+    .rodape {
+        padding: 60px 25px 20px;
+    }
+
+    .rodape-conteudo {
+        flex-direction: column;
+
+        text-align: center;
+    }
+
+    .rodape-marca img {
+        width: 160px;
+    }
+
+    .rodape-final {
+        flex-direction: column;
+
+        text-align: center;
+
+        gap: 8px;
+    }
+
+
+    /* WHATSAPP */
+
+    .whatsapp {
+        right: 18px;
+        bottom: 18px;
+    }
+
+    .whatsapp img {
+        width: 58px;
+    }
+
+}
+
+
+@media (max-width: 400px) {
+
+    .caixa-info-texto h1 {
+        font-size: 32px;
+    }
+
+    .servicos h2 {
+        font-size: 32px;
+    }
+
+    .container-contato h2 {
+        font-size: 32px;
+    }
+
+    .cabecalho nav ul {
+        gap: 10px;
+    }
+
+}
